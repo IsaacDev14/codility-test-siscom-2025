@@ -17,37 +17,4 @@ You are asked to define function least_bribes(bribes) that takes as argument an 
 
 
 def least_bribes(bribes):
-    n = len(bribes)
-    if n == 0:
-        return 0
-    
-    # minimum worst-case cost for rooms from i to j.
-    dp = [[0] * n for _ in range(n)]
-
- 
-    for length in range(1, n + 1):
-        for i in range(n - length + 1):
-            j = i + length - 1
-            dp[i][j] = float('inf') 
-
-            for k in range(i, j + 1):
-                cost_left = dp[i][k - 1] if k > i else 0
-                cost_right = dp[k + 1][j] if k < j else 0
-                current_cost = bribes[k] + max(cost_left, cost_right)
-                
-                dp[i][j] = min(dp[i][j], current_cost)
-
-    return dp[0][n - 1]
-
-
-
-
-
-
-
-
-
-
-
-
-
+   return 0
