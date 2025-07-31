@@ -1,3 +1,4 @@
+# question_3.py
 """
 **SUBSTRING WITH CONCATENATION OF ALL WORDS**
 
@@ -56,11 +57,33 @@ s and words[i] consist of lowercase English letters.
 
 "#Solution"
 
-
+from collections import Counter
 def findSubstring(s, words):
-        """
-        :type s: str
-        :type words: List[str]
-        :rtype: List[int]
-        """
-        
+#     """
+#     :type s: str
+#     :type words: List[str]
+#     :rtype: List[int]
+#     """
+    if not s or not words:
+        return []
+    
+    wordLenth = len(words[0])
+    numwords = len(words)
+    substring_len = wordLenth * numwords
+
+    word_counts = Counter(words)
+    result = []
+
+    for i in range(len(s) - substring_len + 1):
+        substring = s[i : i + substring_len]
+
+        seen_words = []
+        for j  in range(0, len(substring), wordLenth):
+            word = substring[j : j + wordLenth]
+            seen_words.append(word)
+        if Counter(seen_words) == word_counts:
+            result.append(i)
+
+    return result
+
+

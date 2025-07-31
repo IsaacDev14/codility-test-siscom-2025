@@ -1,3 +1,4 @@
+# question_5.py
 """
 You are in the capital of Far, Far Away Land, and you have heard about this museum where the royal family's crown jewels are on display. Before you visit the museum, a friend tells you to bring some extra money that you'll need to bribe the guards. You see, he says, the crown jewels are in one of 10 rooms numbered from 1 to 10. The doors to these room are kept closed, and each is guarded by a very intimidating guard.
 
@@ -17,3 +18,17 @@ You are asked to define function least_bribes(bribes) that takes as argument an 
 
 def least_bribes(bribes):
     return 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+

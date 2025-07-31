@@ -1,3 +1,4 @@
+# question_1.py
 """ 
 **ROMAN TO INTEGER**
 
@@ -55,4 +56,15 @@ def romanToInt(s):
         :type s: str
         :rtype: int
         """
+        n = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        total = 0
+        for i in range(len(s)-1):
+                if n[s[i]] < n[s[i+1]]:
+                        total -= n[s[i]]
+                else:
+                        total += n[s[i]]
+        total += n[s[-1]]
+    
+        return total
         
+
